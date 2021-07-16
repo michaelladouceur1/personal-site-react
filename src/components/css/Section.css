@@ -1,0 +1,29 @@
+@use '../../style.scss';
+.section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+}
+
+.section:nth-child(odd) {
+  background-color: gray;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 800px;
+  height: 100%;
+  background-color: transparent;
+}
+/*# sourceMappingURL=Section.css.map */

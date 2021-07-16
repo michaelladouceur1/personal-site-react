@@ -1,0 +1,62 @@
+.modal {
+  height: 750px;
+  width: 1400px;
+  left: calc(50% - 1400px/ 2);
+  top: calc(50% - 750px/ 2);
+  background-color: gray;
+}
+
+.modal-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
+  background-color: lightblue;
+}
+
+.modal-control button {
+  margin: 0;
+  padding: 0;
+  font-size: 2em;
+  text-align: center;
+}
+
+#modal-left {
+  left: -75px;
+}
+
+#modal-right {
+  right: calc(2.75em - 75px);
+}
+
+.feature-app {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 4fr;
+      grid-template-columns: 1fr 4fr;
+  width: 100%;
+  height: 100%;
+}
+
+.feature-app-info {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 2;
+  width: 100%;
+  height: 100%;
+  padding: 40px 10px 10px 10px;
+}
+
+.feature-app-iframe {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 3;
+}
+/*# sourceMappingURL=FeatureAppModal.css.map */

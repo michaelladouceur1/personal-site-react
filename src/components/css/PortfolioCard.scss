@@ -1,0 +1,86 @@
+@use '../../style.scss';
+
+$card-font-size: 18px;
+$transition-speed: 0.3s;
+
+.portfolio-item {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  font-size: $card-font-size;
+
+  .featured {
+    position: absolute;
+    margin: 10px;
+
+    svg {
+      fill: gold;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    transition: $transition-speed;
+  }
+
+  .portfolio-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: $transition-speed;
+
+    .portfolio-item-info-body {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      margin: 10px auto;
+    }
+
+    .portfolio-item-info-menu {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 10px;
+
+      button {
+        background-color: transparent;
+        border: none;
+
+        svg {
+          font-size: 1.6em;
+        }
+      }
+
+      svg {
+        font-size: 1.3em;
+        margin-left: 15px;
+      }
+    }
+
+    h1 {
+      color: style.$highlight-color-1;
+      border-bottom: 1px solid style.$highlight-color-2;
+    }
+  }
+
+  .blur {
+    filter: blur(3px) brightness(0.3);
+  }
+
+  .visible {
+    display: flex;
+    position: absolute;
+    left: 0;
+    transition: $transition-speed;
+  }
+
+  .hidden {
+    //   display: none;
+    left: 300px;
+    transition: $transition-speed;
+  }
+}

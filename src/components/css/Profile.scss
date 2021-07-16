@@ -1,0 +1,18 @@
+.profile {
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 25%;
+}

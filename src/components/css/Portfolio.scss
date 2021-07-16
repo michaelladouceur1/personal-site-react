@@ -1,0 +1,8 @@
+$rc-gap: 50px;
+
+.portfolio {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: $rc-gap;
+  row-gap: $rc-gap;
+}

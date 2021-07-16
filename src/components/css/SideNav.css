@@ -1,0 +1,54 @@
+.sidenav {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 20px;
+  width: 150px;
+  font-size: 18px;
+}
+
+.sidenav .sn-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidenav .sn-menu a {
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+
+.sidenav .sn-contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.sidenav a {
+  text-decoration: none;
+}
+
+.sidenav a:hover,
+.sidenav i:hover {
+  color: aqua;
+}
+
+.sidenav a,
+.sidenav i {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.sidenav i {
+  font-size: 1.5em;
+}
+/*# sourceMappingURL=SideNav.css.map */

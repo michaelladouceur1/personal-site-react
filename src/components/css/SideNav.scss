@@ -1,0 +1,44 @@
+@use '../../style.scss' as base;
+
+$sn-width: 150px;
+$sn-font-size: 18px;
+$sn-margin: 50px;
+
+.sidenav {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 0 $sn-margin $sn-margin 0;
+  width: $sn-width;
+  font-size: $sn-font-size;
+  width: 130px;
+  z-index: 2;
+
+  .sn-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    a {
+      font-size: 1em;
+      margin-bottom: 15px;
+    }
+  }
+
+  .progress {
+    height: 2px;
+    margin-bottom: 15px;
+    background-color: base.$highlight-color-1;
+  }
+
+  .sn-contact {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+svg {
+  font-size: 1.5em;
+  fill: base.$highlight-color-3;
+}
