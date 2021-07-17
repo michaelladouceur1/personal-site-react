@@ -30,7 +30,7 @@ function Portfolio(props) {
     <Section name="portfolio">
       <div className="section-header">
         <h1>Portfolio</h1>
-        <Select
+        {/* <Select
           id="portfolio-filter"
           multiple
           value={filterSelected}
@@ -44,7 +44,7 @@ function Portfolio(props) {
               </MenuItem>
             );
           })}
-        </Select>
+        </Select> */}
       </div>
       <div className="section-body">
         <div className="portfolio">
