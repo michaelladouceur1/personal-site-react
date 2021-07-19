@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
 import { WiDaySunny } from "react-icons/wi";
+import { CSSTransition } from "react-transition-group";
 
 import "./css/SideNav.scss";
 
 function SideNav(props) {
   const [progress, setProgress] = useState(0);
   const [contactDisplay, setContactDisplay] = useState("Contact");
-  const [displayShown, setDisplayShown] = useState(false);
+  const [holdCD, setHoldCD] = useState("");
+  const [displayShown, setDisplayShown] = useState(true);
 
   window.onscroll = () => {
     setProgress(scrollProgress());
@@ -37,34 +39,59 @@ function SideNav(props) {
         <a
           href="https://www.linkedin.com/in/mpladouceur/"
           target="_blank"
-          onMouseEnter={() => setContactDisplay("LinkedIn")}
-          onMouseLeave={() => setContactDisplay("Contact")}
+          onMouseEnter={() => {
+            setDisplayShown(false);
+            setHoldCD("LinkedIn");
+          }}
+          onMouseLeave={() => {
+            setDisplayShown(false);
+            setHoldCD("Contact");
+          }}
         >
           <AiFillLinkedin />
         </a>
         <a
           href="https://github.com/michaelladouceur1"
           target="_blank"
-          onMouseEnter={() => setContactDisplay("Github")}
-          onMouseLeave={() => setContactDisplay("Contact")}
+          onMouseEnter={() => {
+            setDisplayShown(false);
+            setHoldCD("Github");
+          }}
+          onMouseLeave={() => {
+            setDisplayShown(false);
+            setHoldCD("Contact");
+          }}
         >
           <AiFillGithub />
         </a>
         <a
-          href="mailto: michaelladouceur1@gmail.com"
+          // href="mailto: michaelladouceur1@gmail.com"
+          href="mailto:rachel.m.milkovich@gmail.com"
           target="_blank"
           onMouseEnter={() => {
-            setContactDisplay("Email");
+            setDisplayShown(false);
+            setHoldCD("Email");
           }}
-          onMouseLeave={() => setContactDisplay("Contact")}
+          onMouseLeave={() => {
+            setDisplayShown(false);
+            setHoldCD("Contact");
+          }}
         >
           <AiOutlineMail />
         </a>
       </div>
-      <h3 id="contact-display">{contactDisplay}</h3>
-      {/* <button>
-        <WiDaySunny />
-      </button> */}
+      <CSSTransition
+        in={displayShown}
+        timeout={300}
+        classNames="contact"
+        mountOnEnter
+        onExited={() => {
+          setContactDisplay(holdCD);
+          setDisplayShown(true);
+        }}
+      >
+        <h3 id="contact-display">{contactDisplay}</h3>
+      </CSSTransition>
     </div>
   );
 }

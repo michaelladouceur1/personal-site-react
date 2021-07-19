@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Input from "@material-ui/core/Input";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -13,42 +13,23 @@ import "./css/Portfolio.scss";
 function Portfolio(props) {
   const { portfolio, setModalVisible, setFeatureApp } = props;
 
-  const [filterSelected, setFilterSelected] = useState([]);
+  const [filteredPortfolio, setFilteredPortfolio] = useState(portfolio);
 
-  portfolio.sort((a, b) => {
+  filteredPortfolio.sort((a, b) => {
     if (a.pinned > b.pinned) return -1;
     if (b.pinned > a.pinned) return 1;
 
     return 0;
   });
 
-  function handleChange(event) {
-    setFilterSelected(event.target.value);
-  }
-
   return (
     <Section name="portfolio">
       <div className="section-header">
         <h1>Portfolio</h1>
-        {/* <Select
-          id="portfolio-filter"
-          multiple
-          value={filterSelected}
-          onChange={handleChange}
-          input={<Input />}
-        >
-          {portfolio.map((project, idx) => {
-            return (
-              <MenuItem key={idx} value={project.title}>
-                {project.title}
-              </MenuItem>
-            );
-          })}
-        </Select> */}
       </div>
       <div className="section-body">
         <div className="portfolio">
-          {portfolio.map((project, idx) => {
+          {filteredPortfolio.map((project, idx) => {
             return (
               <PortfolioCard
                 key={idx}

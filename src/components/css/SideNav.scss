@@ -43,17 +43,27 @@ $sn-margin: 50px;
     justify-content: space-around;
     margin-bottom: 10px;
   }
-
-  .visible {
-    opacity: 1;
-  }
-
-  .hidden {
-    opacity: 0;
-  }
 }
 
 svg {
   font-size: 1.5em;
   fill: base.$highlight-color-3;
+}
+
+.contact-enter {
+  opacity: 0;
+}
+
+.contact-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.contact-exit {
+  opacity: 1;
+}
+
+.contact-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
 }

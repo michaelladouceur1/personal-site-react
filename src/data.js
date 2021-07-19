@@ -64,6 +64,17 @@ const data = {
       image: "ticketmain.png",
       deployed_url: "https://ticketmain.herokuapp.com/",
       github_url: "https://github.com/HeartsFSA/GraceShopper",
+      youtube_url:
+        "https://www.youtube.com/watch?v=WBS-jkXAgzI&list=PLPLveFltzJ39xrV7e0lizrrzRS5GP2Wmt&index=3",
+      // technology: [
+      //   "React",
+      //   "Node.js/Express.js",
+      //   "PG",
+      //   "PostgreSQL",
+      //   "HTML",
+      //   "CSS",
+      //   "BCrypt",
+      // ],
       technology: [],
       pinned: true,
     },
