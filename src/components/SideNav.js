@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
 import { WiDaySunny } from "react-icons/wi";
 
@@ -6,6 +6,8 @@ import "./css/SideNav.scss";
 
 function SideNav(props) {
   const [progress, setProgress] = useState(0);
+  const [contactDisplay, setContactDisplay] = useState("Contact");
+  const [displayShown, setDisplayShown] = useState(false);
 
   window.onscroll = () => {
     setProgress(scrollProgress());
@@ -32,16 +34,34 @@ function SideNav(props) {
         <div className="progress" style={{ width: `${progress}%` }}></div>
       </div>
       <div className="sn-contact">
-        <a href="https://www.linkedin.com/in/mpladouceur/" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/mpladouceur/"
+          target="_blank"
+          onMouseEnter={() => setContactDisplay("LinkedIn")}
+          onMouseLeave={() => setContactDisplay("Contact")}
+        >
           <AiFillLinkedin />
         </a>
-        <a href="https://github.com/michaelladouceur1" target="_blank">
+        <a
+          href="https://github.com/michaelladouceur1"
+          target="_blank"
+          onMouseEnter={() => setContactDisplay("Github")}
+          onMouseLeave={() => setContactDisplay("Contact")}
+        >
           <AiFillGithub />
         </a>
-        <a href="mailto: michaelladouceur1@gmail.com" target="_blank">
+        <a
+          href="mailto: michaelladouceur1@gmail.com"
+          target="_blank"
+          onMouseEnter={() => {
+            setContactDisplay("Email");
+          }}
+          onMouseLeave={() => setContactDisplay("Contact")}
+        >
           <AiOutlineMail />
         </a>
       </div>
+      <h3 id="contact-display">{contactDisplay}</h3>
       {/* <button>
         <WiDaySunny />
       </button> */}
