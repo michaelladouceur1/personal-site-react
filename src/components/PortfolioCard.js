@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { AiFillGithub, AiOutlineExpand, AiFillStar } from "react-icons/ai";
+import { AiFillGithub, AiOutlineExpand, AiFillStar, AiFillYoutube } from "react-icons/ai";
 import { FaExternalLinkSquareAlt } from "react-icons/fa";
 
 import "./css/PortfolioCard.scss";
@@ -39,6 +39,14 @@ function PortfolioCard(props) {
           ))}
         </div>
         <div className="portfolio-item-info-menu">
+          {
+            project.youtube_url && project.youtube_url.length > 0 ? 
+            <>
+            <a href={project.youtube_url} target='_blank'>
+              <AiFillYoutube />
+            </a>
+            </> : <></>
+          }
           {project.github_url && project.github_url.length > 0 ? (
             <>
               <a href={project.github_url} target="_blank">
