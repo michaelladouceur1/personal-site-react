@@ -15,7 +15,7 @@ import Portfolio from "./components/Portfolio";
 
 function App() {
   AOS.init();
-  const { portfolio } = data;
+  const { career, education, portfolio, skills } = data;
 
   const [featureApp, setFeatureApp] = useState(portfolio[0]);
   const [modalVisible, setModalVisible] = useState(false);
@@ -29,9 +29,9 @@ function App() {
         featureApp={featureApp}
       />
       <Profile />
-      <Education />
-      <Career />
-      <Skills />
+      <Education education={education} />
+      <Career career={career} />
+      <Skills skills={skills} />
       <Portfolio
         portfolio={portfolio}
         setModalVisible={setModalVisible}

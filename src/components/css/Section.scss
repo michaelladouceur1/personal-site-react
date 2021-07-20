@@ -64,6 +64,17 @@ $header-body-padding: 30px;
 .list-item-header {
   width: 30%;
   margin-right: 10px;
+
+  .location {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    color: base.$highlight-color-1;
+
+    svg {
+      fill: base.$highlight-color-1;
+    }
+  }
 }
 
 .list-item-content {

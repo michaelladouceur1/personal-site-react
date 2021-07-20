@@ -37,14 +37,16 @@ $transition-speed: 0.3s;
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      margin: 10px auto;
+      padding: 10px;
     }
 
     .portfolio-item-info-menu {
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      margin: 10px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
 
       button {
         background-color: transparent;
@@ -64,6 +66,11 @@ $transition-speed: 0.3s;
     h1 {
       color: style.$highlight-color-1;
       border-bottom: 1px solid style.$highlight-color-2;
+    }
+
+    h3 {
+      color: style.$highlight-color-1;
+      margin-top: 10px;
     }
   }
 

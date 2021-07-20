@@ -39,14 +39,16 @@ function PortfolioCard(props) {
           <h1>{project.title}</h1>
           <p>{project.description}</p>
           <h3>Technologies:</h3>
-          {project.technology.map((tech) => (
-            <p>{tech}</p>
-          ))}
+          {project.technology.join(", ")}
         </div>
         <div className="portfolio-item-info-menu">
           {project.youtube_url && project.youtube_url.length > 0 ? (
             <>
-              <a href={project.youtube_url} target="_blank">
+              <a
+                href={project.youtube_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <AiFillYoutube />
               </a>
             </>
@@ -55,7 +57,11 @@ function PortfolioCard(props) {
           )}
           {project.github_url && project.github_url.length > 0 ? (
             <>
-              <a href={project.github_url} target="_blank">
+              <a
+                href={project.github_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <AiFillGithub />
               </a>
             </>
@@ -72,7 +78,11 @@ function PortfolioCard(props) {
               >
                 <AiOutlineExpand />
               </button>
-              <a href={project.deployed_url} target="_blank">
+              <a
+                href={project.deployed_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaExternalLinkSquareAlt />
               </a>
             </>

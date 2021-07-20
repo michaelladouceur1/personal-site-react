@@ -1,4 +1,106 @@
+import {
+  DiReact,
+  DiCss3,
+  DiGitBranch,
+  DiPython,
+  DiSqllite,
+  DiSass,
+} from "react-icons/di";
+import { IoLogoJavascript } from "react-icons/io";
+import { AiFillHtml5, AiFillApi, AiFillGithub } from "react-icons/ai";
+import {
+  SiPostgresql,
+  SiNodeDotJs,
+  SiCplusplus,
+  SiHeroku,
+  SiGraphql,
+  SiJest,
+  SiMongodb,
+  SiTypescript,
+  SiD3DotJs,
+  SiWebpack,
+} from "react-icons/si";
+import { FaDatabase } from "react-icons/fa";
+import { FcDataEncryption } from "react-icons/fc";
+
 const data = {
+  career: [
+    {
+      company: "Aurora Storage Products, Inc.",
+      title: "Mechanical Design Engineer",
+      years: "December 2017 - May 2021",
+      description: `I was the lead design engineer for all new product development of
+      new storage equipment at Aurora Storage Products, Inc (ASP). With
+      all of my designs at ASP, I tried to consider manufacturability
+      (DFMA), cost reduction, customer satisfaction, and safety of the
+      finished products. I also gained hands-on experience prototyping and
+      trouble shooting many of my new designs.`,
+      location: "Aurora, IL",
+    },
+    {
+      company: "Metropolitan Air Technology",
+      title: "Mechanical Design Engineer",
+      years: "May 2016 - June 2017",
+      description: `At Metropolitan Air Technology (MAT), I lead the design process of a
+      new fire & smoke damper product line that met UL standards. In
+      addition to the design of the products, my responsibilities
+      included: manufacturing process layout, manufacturing floor layout
+      for overseas facility, custom tooling design, and general on-site
+      facility maintenance.`,
+      location: "Chicago, IL",
+    },
+    {
+      company: "S&C Electric Co.",
+      title: "Design Automation Engineer",
+      years: "June 2015 - May 2016",
+      description: `Integrated design automation software (Rule Stream) with CAD
+      software (SolidEdge) using VBA programming language. Purpose of this
+      project was to reduce design time needed for engineered-to-order
+      quotes and orders.`,
+      location: "Chicago, IL",
+    },
+  ],
+
+  education: [
+    {
+      institution: "Full Stack Academy",
+      degree: "Software Developer Certificate",
+      years: "2021",
+      description: `I had been contemplating a change of careers for several years, and
+      decided to take the plunge with the Full Stack Academy/UIC software
+      development bootcamp. Topics covered during my coursework included:
+      Javascript, React, JQuery, HTML, CSS, Node, SQL, and others.`,
+      location: "Online",
+    },
+    {
+      institution: "University of Illinois at Chicago",
+      degree: "B.S., Mechanical Engineering",
+      years: "2013-2015",
+      description: `University of Illinois at Chicago (UIC) is where I finished my
+      undergraduate education, and where my passion for learning ignited.
+      During my two years at UIC, I covered many interesting and
+      informative topics including: fluid mechanics, thermodynamics, heat
+      transfer, numerical & computational methods, engineering design, and
+      higher-level mathematics. I wrapped up my time at UIC with a 1st
+      prize award at the 2015 UIC Engineering Expo for my part on the
+      design team of an endoluminal sewing machine.`,
+      location: "Chicago, IL",
+    },
+    {
+      institution: "College of Dupage",
+      degree: "General Education",
+      years: "2010-2013",
+      description: `I entered College of Dupage (COD) after high school with no real
+      direction. I questioned taking a semester off, but decided to take
+      an introductory engineering course as a last ditch effort. The
+      material sucked me in, and I remember the day I wanted to get into
+      the sciences; The professor wrote a differential equation on the
+      board and asked an upper classman a question about it. It was like
+      black magic to me, and I wanted to know how it worked.`,
+      location: "Glen Ellyn, IL",
+    },
+  ],
+
   portfolio: [
     {
       title: "Retro Draw",
@@ -7,7 +109,7 @@ const data = {
       image: "pixel-draw.png",
       deployed_url: "https://musing-lichterman-df9769.netlify.app/",
       github_url: "",
-      technology: ["JQuery", "HTML", "CSS"],
+      technology: ["JS", "JQuery", "HTML", "CSS"],
       pinned: false,
     },
     {
@@ -16,7 +118,7 @@ const data = {
       image: "calculator.png",
       deployed_url: "https://distracted-kowalevski-8a2e53.netlify.app/",
       github_url: "",
-      technology: ["JQuery", "HTML", "CSS"],
+      technology: ["JS", "JQuery", "HTML", "CSS"],
       pinned: false,
     },
     {
@@ -25,7 +127,7 @@ const data = {
       image: "arcade.png",
       deployed_url: "https://angry-wozniak-f00827.netlify.app/",
       github_url: "",
-      technology: ["JQuery", "HTML", "CSS"],
+      technology: ["JS", "React", "HTML", "CSS"],
       pinned: true,
     },
     {
@@ -35,7 +137,7 @@ const data = {
       image: "user-hub.png",
       deployed_url: "https://stupefied-golick-d91c6f.netlify.app/",
       github_url: "",
-      technology: ["JQuery", "HTML", "CSS"],
+      technology: ["JS", "JQuery", "Axios", "HTML", "CSS"],
       pinned: false,
     },
     {
@@ -45,7 +147,7 @@ const data = {
       image: "art-collector.png",
       deployed_url: "https://silly-easley-3392c1.netlify.app/",
       github_url: "",
-      technology: ["JQuery", "HTML", "CSS"],
+      technology: ["JS", "JQuery", "Axios", "HTML", "CSS"],
       pinned: false,
     },
     {
@@ -54,7 +156,7 @@ const data = {
       image: "user-hub-react.png",
       deployed_url: "https://festive-fermi-6afda0.netlify.app/",
       github_url: "",
-      technology: ["JQuery", "HTML", "CSS"],
+      technology: ["JS", "React", "Axios", "HTML", "CSS"],
       pinned: true,
     },
     {
@@ -66,44 +168,82 @@ const data = {
       github_url: "https://github.com/HeartsFSA/GraceShopper",
       youtube_url:
         "https://www.youtube.com/watch?v=WBS-jkXAgzI&list=PLPLveFltzJ39xrV7e0lizrrzRS5GP2Wmt&index=3",
-      // technology: [
-      //   "React",
-      //   "Node.js/Express.js",
-      //   "PG",
-      //   "PostgreSQL",
-      //   "HTML",
-      //   "CSS",
-      //   "BCrypt",
-      // ],
-      technology: [],
+      technology: [
+        "JS",
+        "React",
+        "Node.js/Express.js",
+        "PostgreSQL",
+        "SQL",
+        "HTML",
+        "CSS",
+        "BCrypt",
+        "MaterialUI",
+        "Stripe",
+      ],
       pinned: true,
     },
   ],
 
   skills: [
     {
-      name: "React",
-      category: "Framework",
+      name: "JavaScript",
+      element: <IoLogoJavascript />,
     },
     {
-      name: "JavaScript",
-      category: "Language",
+      name: "React",
+      element: <DiReact />,
+    },
+    {
+      name: "Node.js/Express.js",
+      element: <SiNodeDotJs />,
+    },
+    {
+      name: "PostgreSQL",
+      element: <SiPostgresql />,
+    },
+    {
+      name: "SQL",
+      element: <FaDatabase />,
+    },
+    {
+      name: "RestfulAPI",
+      element: <AiFillApi />,
+    },
+    {
+      name: "Git",
+      element: <DiGitBranch />,
+    },
+    {
+      name: "Github",
+      element: <AiFillGithub />,
+    },
+    {
+      name: "HTML",
+      element: <AiFillHtml5 />,
+    },
+    {
+      name: "CSS",
+      element: <DiCss3 />,
+    },
+    {
+      name: "Sass",
+      element: <DiSass />,
     },
     {
       name: "Python",
-      category: "Language",
+      element: <DiPython />,
     },
     {
-      name: "Express",
-      category: "Library",
+      name: "SQLlite",
+      element: <DiSqllite />,
     },
     {
-      name: "Axios",
-      category: "Library",
+      name: "C++",
+      element: <SiCplusplus />,
     },
     {
-      name: "PG",
-      category: "Library",
+      name: "Heroku",
+      element: <SiHeroku />,
     },
   ],
 };
