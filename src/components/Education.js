@@ -11,24 +11,22 @@ function Education(props) {
       <div className="section-header">
         <h1>Education</h1>
       </div>
-      {education.map((inst) => {
+      {education.map((inst, idx) => {
         return (
-          <>
-            <div className="list-item">
-              <div className="list-item-header">
-                <h2>{inst.institution}</h2>
-                <h4>{inst.degree}</h4>
-                <h5>{inst.years}</h5>
-                <h5 className="location">
-                  <ImLocation />
-                  {inst.location}
-                </h5>
-              </div>
-              <div className="list-item-content">
-                <p>{inst.description}</p>
-              </div>
+          <div key={idx} className="list-item">
+            <div className="list-item-header">
+              <h2>{inst.institution}</h2>
+              <h4>{inst.degree}</h4>
+              <h5>{inst.years}</h5>
+              <h5 className="location">
+                <ImLocation />
+                {inst.location}
+              </h5>
             </div>
-          </>
+            <div className="list-item-content">
+              <p>{inst.description}</p>
+            </div>
+          </div>
         );
       })}
     </Section>

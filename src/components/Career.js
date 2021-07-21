@@ -11,24 +11,22 @@ function Career(props) {
       <div className="section-header">
         <h1>Career</h1>
       </div>
-      {career.map((job) => {
+      {career.map((job, idx) => {
         return (
-          <>
-            <div className="list-item">
-              <div className="list-item-header">
-                <h2>{job.company}</h2>
-                <h4>{job.title}</h4>
-                <h5>{job.years}</h5>
-                <h5 className="location">
-                  <ImLocation />
-                  {job.location}
-                </h5>
-              </div>
-              <div className="list-item-content">
-                <p>{job.description}</p>
-              </div>
+          <div key={idx} className="list-item">
+            <div className="list-item-header">
+              <h2>{job.company}</h2>
+              <h4>{job.title}</h4>
+              <h5>{job.years}</h5>
+              <h5 className="location">
+                <ImLocation />
+                {job.location}
+              </h5>
             </div>
-          </>
+            <div className="list-item-content">
+              <p>{job.description}</p>
+            </div>
+          </div>
         );
       })}
     </Section>

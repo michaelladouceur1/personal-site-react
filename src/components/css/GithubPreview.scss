@@ -1,0 +1,40 @@
+@use '../../style.scss' as base;
+
+$cell-size: 15px;
+
+.github-preview {
+    display: flex;
+    height: 100%;
+    width: 80%;
+    padding: 50px;
+    border: 1px solid base.$highlight-color-2;
+    border-radius: 5px;
+
+    .github-grid {
+        display: grid;
+        height: 100%;
+        grid-template-rows: repeat(7, $cell-size);
+        grid-auto-flow: column;
+        row-gap: calc(#{$cell-size}/2);
+        column-gap: calc(#{$cell-size}/2);
+
+        .cell {
+            height: 100%;
+            width: $cell-size;
+            border-radius: calc(#{$cell-size}/4);
+        }
+        
+        .cell:hover {
+            cursor: pointer;
+            transform: scale(1.15);
+        }
+
+        .empty {
+            background-color: black;
+        }
+
+        .filled {
+            background-color: base.$highlight-color-1;
+        }
+    }
+}

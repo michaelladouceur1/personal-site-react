@@ -15,7 +15,6 @@ function Skills(props) {
       <div className="section-body">
         <div className="skills">
           {skills.map((skill, idx) => {
-            console.log(skill);
             return (
               <div key={idx} className="skills-item">
                 {skill.element}

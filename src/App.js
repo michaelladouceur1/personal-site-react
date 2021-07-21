@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -13,12 +13,19 @@ import Career from "./components/Career";
 import Skills from "./components/Skills";
 import Portfolio from "./components/Portfolio";
 
+import { getGithubData } from "./utils";
+
 function App() {
   AOS.init();
   const { career, education, portfolio, skills } = data;
 
+  const [githubData, setGithubData] = useState({});
   const [featureApp, setFeatureApp] = useState(portfolio[0]);
   const [modalVisible, setModalVisible] = useState(false);
+
+  useEffect(async () => {
+    setGithubData(await getGithubData());
+  }, []);
 
   return (
     <>
@@ -28,7 +35,7 @@ function App() {
         setVisible={setModalVisible}
         featureApp={featureApp}
       />
-      <Profile />
+      <Profile githubData={githubData} />
       <Education education={education} />
       <Career career={career} />
       <Skills skills={skills} />
