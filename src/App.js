@@ -13,19 +13,12 @@ import Career from "./components/Career";
 import Skills from "./components/Skills";
 import Portfolio from "./components/Portfolio";
 
-import { getGithubData } from "./utils";
-
 function App() {
   AOS.init();
   const { career, education, portfolio, skills } = data;
 
-  const [githubData, setGithubData] = useState({});
   const [featureApp, setFeatureApp] = useState(portfolio[0]);
   const [modalVisible, setModalVisible] = useState(false);
-
-  useEffect(async () => {
-    setGithubData(await getGithubData());
-  }, []);
 
   return (
     <>
@@ -35,7 +28,7 @@ function App() {
         setVisible={setModalVisible}
         featureApp={featureApp}
       />
-      <Profile githubData={githubData} />
+      <Profile />
       <Portfolio
         portfolio={portfolio}
         setModalVisible={setModalVisible}
