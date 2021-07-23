@@ -10,8 +10,11 @@ function Profile(props) {
   return (
     <Section name="profile">
       <div className="section-header">
-        <h1>Profile</h1>
-        <h3>A mechanical engineer looking for a change to software</h3>
+        <h1>Michael LaDouceur</h1>
+        <h3>
+          A former mechanical engineer finding his passion in software
+          development
+        </h3>
       </div>
       <div className="section-body">
         <div className="profile">
