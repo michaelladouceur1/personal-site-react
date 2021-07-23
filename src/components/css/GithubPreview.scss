@@ -4,11 +4,20 @@ $cell-size: 15px;
 
 .github-preview {
     display: flex;
+    justify-content: center;
     height: 100%;
-    width: 80%;
-    padding: 50px;
     border: 1px solid base.$highlight-color-2;
     border-radius: 5px;
+    padding-top: 30px;
+    margin-top: 30px;
+    transition: 0.3s;
+
+    .github-preview-content {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
 
     .github-grid {
         display: grid;
@@ -37,4 +46,32 @@ $cell-size: 15px;
             background-color: base.$highlight-color-1;
         }
     }
+}
+
+.collapsed {
+    padding: 10px;
+    width: 30%;
+    transition: 0.3s;
+
+    button {
+        font-size: 1em;
+    }
+}
+
+.collapsed:hover {
+    background-color: base.$highlight-color-1;
+    button {
+        color: black;
+    }
+}
+
+.expanded {
+    padding: 50px;
+    width: 80%;
+}
+
+.close-btn {
+    position: absolute;
+    right: -40px;
+    top: -40px;
 }

@@ -36,14 +36,14 @@ function App() {
         featureApp={featureApp}
       />
       <Profile githubData={githubData} />
-      <Education education={education} />
-      <Career career={career} />
-      <Skills skills={skills} />
       <Portfolio
         portfolio={portfolio}
         setModalVisible={setModalVisible}
         setFeatureApp={setFeatureApp}
       />
+      <Skills skills={skills} />
+      <Career career={career} />
+      <Education education={education} />
     </>
   );
 }

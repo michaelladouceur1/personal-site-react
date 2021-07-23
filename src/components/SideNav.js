@@ -29,10 +29,10 @@ function SideNav(props) {
     <div className="sidenav">
       <div className="sn-controls">
         <a href="#profile">Profile</a>
-        <a href="#education">Education</a>
-        <a href="#career">Career</a>
-        <a href="#skills">Skills</a>
         <a href="#portfolio">Portfolio</a>
+        <a href="#skills">Skills</a>
+        <a href="#career">Career</a>
+        <a href="#education">Education</a>
         <div className="progress" style={{ width: `${progress}%` }}></div>
       </div>
       <div className="sn-contact">
@@ -65,8 +65,7 @@ function SideNav(props) {
           <AiFillGithub />
         </a>
         <a
-          // href="mailto: michaelladouceur1@gmail.com"
-          href="mailto:rachel.m.milkovich@gmail.com"
+          href="mailto: michaelladouceur1@gmail.com"
           target="_blank"
           onMouseEnter={() => {
             setDisplayShown(false);
