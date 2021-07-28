@@ -1,5 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { CSSTransition } from "react-transition-group";
+
 import { CgClose } from "react-icons/cg";
 
 import "./css/Modal.scss";

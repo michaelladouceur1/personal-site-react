@@ -1,7 +1,7 @@
 .modal {
   position: fixed;
+  display: flex;
   z-index: 1;
-  transition: 1s;
 
   button {
     position: absolute;

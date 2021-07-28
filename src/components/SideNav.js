@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { CSSTransition } from "react-transition-group";
+
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
 import { WiDaySunny } from "react-icons/wi";
-import { CSSTransition } from "react-transition-group";
 
 import "./css/SideNav.scss";
 
