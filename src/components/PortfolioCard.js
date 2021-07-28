@@ -37,9 +37,13 @@ function PortfolioCard(props) {
       >
         <div className="portfolio-item-info-body">
           <h1>{project.title}</h1>
-          <p>{project.description}</p>
-          <h3>Technologies:</h3>
-          {project.technology.join(", ")}
+          <div className="description">
+            <p>{project.description}</p>
+          </div>
+          <div className="technology">
+            <h3>Technologies:</h3>
+            <p>{project.technology.join(", ")}</p>
+          </div>
         </div>
         <div className="portfolio-item-info-menu">
           {project.youtube_url && project.youtube_url.length > 0 ? (

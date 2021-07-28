@@ -38,6 +38,16 @@ $transition-speed: 0.3s;
       flex-direction: column;
       align-items: stretch;
       padding: 10px;
+      width: 100%;
+
+      .description {
+        overflow: hidden;
+        max-height: 88px;
+      }
+
+      .technology {
+        
+      }
     }
 
     .portfolio-item-info-menu {

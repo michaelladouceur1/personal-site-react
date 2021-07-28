@@ -22,11 +22,12 @@ function App() {
 
   return (
     <>
-      <SideNav />
+      {modalVisible ? <></> : <SideNav />}
       <FeatureAppModal
         visible={modalVisible}
         setVisible={setModalVisible}
         featureApp={featureApp}
+        skills={skills}
       />
       <Profile />
       <Portfolio

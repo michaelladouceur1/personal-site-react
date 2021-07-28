@@ -13,6 +13,7 @@ import {
   SiNodeDotJs,
   SiCplusplus,
   SiHeroku,
+  SiJquery,
   SiGraphql,
   SiJest,
   SiMongodb,
@@ -109,7 +110,7 @@ const data = {
       image: "pixel-draw.png",
       deployed_url: "https://musing-lichterman-df9769.netlify.app/",
       github_url: "",
-      technology: ["JS", "JQuery", "HTML", "CSS"],
+      technology: ["JavaScript", "JQuery", "HTML", "CSS"],
       pinned: false,
     },
     {
@@ -118,7 +119,7 @@ const data = {
       image: "calculator.png",
       deployed_url: "https://distracted-kowalevski-8a2e53.netlify.app/",
       github_url: "",
-      technology: ["JS", "JQuery", "HTML", "CSS"],
+      technology: ["JavaScript", "JQuery", "HTML", "CSS"],
       pinned: false,
     },
     {
@@ -127,7 +128,7 @@ const data = {
       image: "arcade.png",
       deployed_url: "https://angry-wozniak-f00827.netlify.app/",
       github_url: "",
-      technology: ["JS", "React", "HTML", "CSS"],
+      technology: ["JavaScript", "JQuery", "HTML", "CSS"],
       pinned: true,
     },
     {
@@ -137,7 +138,7 @@ const data = {
       image: "user-hub.png",
       deployed_url: "https://stupefied-golick-d91c6f.netlify.app/",
       github_url: "",
-      technology: ["JS", "JQuery", "Axios", "HTML", "CSS"],
+      technology: ["JavaScript", "JQuery", "Axios", "HTML", "CSS"],
       pinned: false,
     },
     {
@@ -147,7 +148,7 @@ const data = {
       image: "art-collector.png",
       deployed_url: "https://silly-easley-3392c1.netlify.app/",
       github_url: "",
-      technology: ["JS", "JQuery", "Axios", "HTML", "CSS"],
+      technology: ["JavaScript", "JQuery", "Axios", "HTML", "CSS"],
       pinned: false,
     },
     {
@@ -156,20 +157,20 @@ const data = {
       image: "user-hub-react.png",
       deployed_url: "https://festive-fermi-6afda0.netlify.app/",
       github_url: "",
-      technology: ["JS", "React", "Axios", "HTML", "CSS"],
+      technology: ["JavaScript", "React", "Axios", "HTML", "CSS"],
       pinned: true,
     },
     {
       title: "TicketMain",
       description:
-        "An e-commerce site with the purpose to sell tickets to unconventional destinations and events",
+        "An e-commerce site with the purpose of selling tickets to unconventional destinations and events developed by a team of 4 students from the FSA/UIC Bootcamp. A full UI was developed with the ability for a customer to browse products, browse seller pages, persistently update carts, and submit orders. An administrative dashboard was also developed for the purpose of adding and updating products, viewing orders, and viewing user details.",
       image: "ticketmain.png",
       deployed_url: "https://ticketmain.herokuapp.com/",
       github_url: "https://github.com/HeartsFSA/GraceShopper",
       youtube_url:
         "https://www.youtube.com/watch?v=WBS-jkXAgzI&list=PLPLveFltzJ39xrV7e0lizrrzRS5GP2Wmt&index=3",
       technology: [
-        "JS",
+        "JavaScript",
         "React",
         "Node.js/Express.js",
         "PostgreSQL",
@@ -208,6 +209,10 @@ const data = {
     {
       name: "RestfulAPI",
       element: <AiFillApi />,
+    },
+    {
+      name: "JQuery",
+      element: <SiJquery />,
     },
     {
       name: "Git",
