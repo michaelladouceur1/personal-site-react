@@ -11,13 +11,13 @@ $modal-height: 750px;
     left: calc(50% - #{$modal-width}/ 2);
   }
 
-  .feature-app-iframe {
-    iframe {
-      width: 133%;
-      transform: scale(0.75);
-      transform-origin: 0 0;
-    }
-  }
+  // .feature-app-iframe {
+  //   iframe {
+  //     width: 133%;
+  //     transform: scale(0.75);
+  //     transform-origin: 0 0;
+  //   }
+  // }
 }
 
 @media only screen and (max-height: 750px) {
@@ -28,13 +28,13 @@ $modal-height: 750px;
     top: calc(50% - #{$modal-height}/ 2);
   }
 
-  .feature-app-iframe {
-    iframe {
-      height: 120%;
-      transform: scale(0.75);
-      transform-origin: 0 0;
-    }
-  }
+  // .feature-app-iframe {
+  //   iframe {
+  //     height: 120%;
+  //     transform: scale(0.75);
+  //     transform-origin: 0 0;
+  //   }
+  // }
 }
 
 @media only screen and (min-width: 1401px) {
@@ -45,11 +45,11 @@ $modal-height: 750px;
     left: calc(50% - #{$modal-width}/ 2);
   }
 
-  .feature-app-iframe {
-    iframe {
-      width: 100%;
-    }
-  }
+  // .feature-app-iframe {
+  //   iframe {
+  //     width: 100%;
+  //   }
+  // }
 }
 
 @media only screen and (min-height: 751px) {
@@ -60,11 +60,11 @@ $modal-height: 750px;
     top: calc(50% - #{$modal-height}/ 2);
   }
 
-  .feature-app-iframe {
-    iframe {
-      height: 100%;
-    }
-  }
+  // .feature-app-iframe {
+  //   iframe {
+  //     height: 100%;
+  //   }
+  // }
 }
 
 .modal {
@@ -162,12 +162,8 @@ $modal-height: 750px;
     overflow: hidden;
 
     iframe {
-      // height: 100%;
-      // width: 100%;
-      // height: 133%;
-      // width: 133%;
-      // transform: scale(0.75);
-      // transform-origin: 0 0;
+      height: 100%;
+      width: 100%;
     }
   }
 }
