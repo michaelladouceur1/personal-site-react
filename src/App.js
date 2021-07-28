@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import "aos/dist/aos.css";
 
 import Section from "./components/Section";
 import data from "./data";
