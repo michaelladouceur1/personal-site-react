@@ -106,7 +106,7 @@ const data = {
     {
       title: "Retro Draw",
       description:
-        "A varying-resolution drawing tool with functionality to speed up the drawing time",
+        "A varying-resolution drawing tool with functionality to speed up the drawing time. Functionality for filling all spaces, filling all blank spaces, and clearing the spaces. The color palette was setup for easy addition of future colors.",
       image: "pixel-draw.png",
       deployed_url: "https://musing-lichterman-df9769.netlify.app/",
       github_url: "",
@@ -124,7 +124,8 @@ const data = {
     },
     {
       title: "Arcade",
-      description: "A retro-themed arcade app",
+      description:
+        "A retro-themed arcade app showcasing classic games for multiple players. The design of the overall site was made to be modular to integrate new future games easier.",
       image: "arcade.png",
       deployed_url: "https://angry-wozniak-f00827.netlify.app/",
       github_url: "",
