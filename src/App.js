@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import AOS from "aos";
 import "aos/dist/aos.css";
 
 import Section from "./components/Section";
@@ -14,7 +13,6 @@ import Skills from "./components/Skills";
 import Portfolio from "./components/Portfolio";
 
 function App() {
-  AOS.init();
   const { career, education, portfolio, skills } = data;
 
   const [featureApp, setFeatureApp] = useState(portfolio[0]);

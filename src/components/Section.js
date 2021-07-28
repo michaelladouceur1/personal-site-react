@@ -4,12 +4,7 @@ import "./css/Section.scss";
 
 function Section(props) {
   return (
-    <section
-      className="section"
-      id={props.name}
-      data-aos="fade-up"
-      data-aos-once="true"
-    >
+    <section className="section" id={props.name}>
       <div className="content">{props.children}</div>
     </section>
   );
