@@ -18,12 +18,13 @@ function GithubPreview(props) {
     >
       {previewExpanded ? (
         <div className="github-preview-content">
-          <button
+          <a
+            href="#profile"
             className="close-btn"
             onClick={() => setPreviewExpanded(false)}
           >
             <FiMinimize />
-          </button>
+          </a>
           <div className="github-grid">
             {Object.keys(githubData).length > 0 ? (
               githubData.grid.reverse().map((cell, idx) => {
@@ -46,9 +47,9 @@ function GithubPreview(props) {
           </div>
         </div>
       ) : (
-        <a href="#github-preview" onClick={() => setPreviewExpanded(true)}>
+        <button onClick={() => setPreviewExpanded(true)}>
           What's Michael working on?
-        </a>
+        </button>
       )}
     </div>
   );

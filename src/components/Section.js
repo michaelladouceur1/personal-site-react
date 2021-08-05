@@ -7,8 +7,8 @@ function Section(props) {
     <section
       className="section"
       id={props.name}
-      data-aos="fade-up"
-      data-aos-once="true"
+      // data-aos="fade-up"
+      // data-aos-once="true"
     >
       <div className="content">{props.children}</div>
     </section>
