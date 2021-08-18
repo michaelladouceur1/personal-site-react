@@ -10,6 +10,7 @@ import Education from "./components/Education";
 import Career from "./components/Career";
 import Skills from "./components/Skills";
 import Portfolio from "./components/Portfolio";
+import axios from "axios";
 
 function App() {
   const { career, education, portfolio, skills } = data;
@@ -17,15 +18,12 @@ function App() {
   const [featureApp, setFeatureApp] = useState(portfolio[0]);
   const [modalVisible, setModalVisible] = useState(false);
 
-<<<<<<< HEAD
-=======
   useEffect(async () => {
-    const data = await getGithubData();
+    const data = await axios.get("/api/github");
     console.log(data);
     setGithubData(data);
   }, []);
 
->>>>>>> git-project-viewer
   return (
     <>
       {modalVisible ? <></> : <SideNav />}
