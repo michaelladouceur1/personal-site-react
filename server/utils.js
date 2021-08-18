@@ -15,15 +15,43 @@ export async function getGithubData() {
         query: `
             query {
                 viewer {
-                    repositories(last: 20) {
+                    followers(last: 10) {
+                        totalCount
+                        nodes {
+                            name
+                            login
+                        }
+                    }
+                    organizations(last: 5) {
+                        nodes {
+                            name
+                        }
+                    }
+                    projects(last: 5) {
+                        nodes {
+                            name
+                        }
+                    }
+                    starredRepositories(last: 10) {
+                        nodes {
+                            name
+                        }
+                    }
+                    repositories(last: 100) {
                         edges {
                             node {
                                 name
                                 description
+                                url
                                 createdAt
                                 updatedAt
                                 primaryLanguage {
                                     name
+                                }
+                                languages(first: 10) {
+                                    nodes {
+                                        name
+                                    }
                                 }
                                 owner {
                                     login
