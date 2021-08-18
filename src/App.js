@@ -24,7 +24,9 @@ function App() {
   const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(async () => {
-    setGithubData(await getGithubData());
+    const data = await getGithubData();
+    console.log(data);
+    setGithubData(data);
   }, []);
 
   return (
