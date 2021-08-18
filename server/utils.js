@@ -1,5 +1,7 @@
 import axios from "axios";
 
+import { GITHUB_PAT } from "../secret";
+
 const GITHUB_API_URL = "https://api.github.com/graphql";
 
 export async function getGithubData() {
@@ -89,7 +91,7 @@ export async function getGithubData() {
       },
       {
         headers: {
-          Authorization: "bearer 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",
+          Authorization: `bearer ${GITHUB_PAT}`,
           Accept: "application/vnd.github.hawkgirl-preview+json",
         },
       }
