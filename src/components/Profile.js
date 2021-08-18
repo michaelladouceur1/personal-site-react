@@ -2,6 +2,7 @@ import React from "react";
 
 // Local Imports - JS
 import Section from "./Section";
+import GithubPreview from "./GithubPreview";
 
 // Local Imports - CSS
 import "./css/Profile.scss";
@@ -47,6 +48,7 @@ function Profile(props) {
           </div>
         </div>
       </div>
+      <GithubPreview githubData={githubData} />
     </Section>
   );
 }

@@ -17,6 +17,7 @@ function App() {
 
   const [featureApp, setFeatureApp] = useState(portfolio[0]);
   const [modalVisible, setModalVisible] = useState(false);
+  const [githubData, setGithubData] = useState({});
 
   useEffect(async () => {
     const data = await axios.get("/api/github");
@@ -33,7 +34,7 @@ function App() {
         featureApp={featureApp}
         skills={skills}
       />
-      <Profile />
+      <Profile githubData={githubData} />
       <Portfolio
         portfolio={portfolio}
         setModalVisible={setModalVisible}
