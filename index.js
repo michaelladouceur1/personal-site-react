@@ -2,7 +2,7 @@ const express = require("express");
 const server = express();
 const path = require("path");
 
-const apiRouter = require("./api");
+const apiRouter = require("./server/api");
 const PORT = process.env.PORT || 4000;
 
 server.use(express.json());
