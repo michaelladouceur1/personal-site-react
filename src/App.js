@@ -17,6 +17,15 @@ function App() {
   const [featureApp, setFeatureApp] = useState(portfolio[0]);
   const [modalVisible, setModalVisible] = useState(false);
 
+<<<<<<< HEAD
+=======
+  useEffect(async () => {
+    const data = await getGithubData();
+    console.log(data);
+    setGithubData(data);
+  }, []);
+
+>>>>>>> git-project-viewer
   return (
     <>
       {modalVisible ? <></> : <SideNav />}

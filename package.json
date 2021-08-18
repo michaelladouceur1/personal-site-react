@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "proxy": "http://localhost:4000",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node index.js",
+    "start:react": "react-scripts start",
+    "start:server": "nodemon --ignore ./src/ ./server/index.js",
     "build": "react-scripts build"
   },
   "keywords": [],
@@ -18,6 +21,7 @@
     "@material-ui/core": "^4.12.1",
     "axios": "^0.21.1",
     "dotenv": "^10.0.0",
+    "express": "^4.17.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
@@ -37,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }
