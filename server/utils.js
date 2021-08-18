@@ -1,10 +1,19 @@
-import axios from "axios";
+const axios = require("axios");
 
-import { GITHUB_PAT } from "../secret";
+const GITHUB_PAT = require("../secret");
 
 const GITHUB_API_URL = "https://api.github.com/graphql";
 
-export async function getGithubData() {
+function setHeaders() {
+  return {
+    headers: {
+      Authorization: `bearer ${GITHUB_PAT}`,
+      Accept: "application/vnd.github.hawkgirl-preview+json",
+    },
+  };
+}
+
+async function getGithubData() {
   var timestamp = new Date("08/07/2021").toISOString();
   var today = new Date().toISOString();
 
@@ -39,7 +48,7 @@ export async function getGithubData() {
                             name
                         }
                     }
-                    repositories(last: 100) {
+                    repositories(last: 10) {
                         edges {
                             node {
                                 name
@@ -89,12 +98,7 @@ export async function getGithubData() {
             }
             `,
       },
-      {
-        headers: {
-          Authorization: `bearer ${GITHUB_PAT}`,
-          Accept: "application/vnd.github.hawkgirl-preview+json",
-        },
-      }
+      setHeaders()
     );
     console.log(data);
     return data;
@@ -102,3 +106,5 @@ export async function getGithubData() {
     return error;
   }
 }
+
+module.exports = getGithubData;
