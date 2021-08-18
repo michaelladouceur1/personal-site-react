@@ -8,6 +8,8 @@ import GithubPreview from "./GithubPreview";
 import "./css/Profile.scss";
 
 function Profile(props) {
+  const { githubData } = props;
+
   return (
     <Section name="profile">
       <div className="section-header">

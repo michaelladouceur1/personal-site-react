@@ -20,7 +20,7 @@ function App() {
   const [githubData, setGithubData] = useState({});
 
   useEffect(async () => {
-    const data = await axios.get("/api/github");
+    const data = await axios.get("http://localhost:4000/api/github");
     console.log(data);
     setGithubData(data);
   }, []);
