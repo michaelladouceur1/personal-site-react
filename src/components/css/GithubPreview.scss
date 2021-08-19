@@ -15,13 +15,13 @@ $cell-size: 15px;
   .github-preview-content {
     position: relative;
     display: flex;
+    align-items: center;
     width: 100%;
     height: 100%;
   }
 
   .github-grid {
     display: grid;
-    height: 100%;
     grid-template-rows: repeat(7, $cell-size);
     grid-auto-flow: column;
     row-gap: calc(#{$cell-size}/ 2);
@@ -67,6 +67,7 @@ $cell-size: 15px;
 
 .expanded {
   padding: 50px;
+  height: 200px;
   width: 80%;
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FiMinimize } from "react-icons/fi";
 
 import "./css/GithubPreview.scss";
@@ -8,8 +8,20 @@ export const DAYS_ON_PREVIEW = 70;
 
 function GithubPreview(props) {
   const { githubData } = props;
+  // console.log(githubData);
 
+  const [displayedWeeks, setDisplayedWeeks] = useState([]);
   const [previewExpanded, setPreviewExpanded] = useState(false);
+  // console.log("displayedWeeks", displayedWeeks);
+
+  useEffect(() => {
+    if (Object.keys(githubData).length > 0) {
+      const weeks =
+        githubData.contributionsCollection.contributionCalendar.weeks;
+      console.log(weeks.slice(weeks.length - 12, weeks.length));
+      setDisplayedWeeks(weeks.slice(weeks.length - 12, weeks.length));
+    }
+  }, [githubData]);
 
   return (
     <div
@@ -26,20 +38,19 @@ function GithubPreview(props) {
             <FiMinimize />
           </a>
           <div className="github-grid">
-            {Object.keys(githubData).length > 0 ? (
-              githubData.grid.reverse().map((cell, idx) => {
-                const check = Object.values(cell.data).filter(
-                  (el) => el.length > 0
-                );
-                if (check.length === 0) {
+            {displayedWeeks.length > 0 ? (
+              displayedWeeks.map((week) => {
+                return week.contributionDays.map((day, idx) => {
+                  const color = day.color === "#ebedf0" ? "#363636" : day.color;
                   return (
-                    <div key={idx} className="cell empty" id={cell.date}></div>
+                    <div
+                      key={idx}
+                      className="cell"
+                      id={day.date}
+                      style={{ backgroundColor: color }}
+                    ></div>
                   );
-                } else {
-                  return (
-                    <div key={idx} className="cell filled" id={cell.date}></div>
-                  );
-                }
+                });
               })
             ) : (
               <></>

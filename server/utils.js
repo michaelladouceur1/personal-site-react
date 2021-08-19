@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 // const GITHUB_PAT = require("../secret");
-const GITHUB_PAT = process.env.GITHUB_PAT;
+const GITHUB_PAT = process.env.GITHUB_PAT || require("../secret");
 
 const GITHUB_API_URL = "https://api.github.com/graphql";
 
