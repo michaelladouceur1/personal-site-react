@@ -22,15 +22,41 @@ $cell-size: 15px;
 
   .github-grid {
     display: grid;
+    // position: relative;
     grid-template-rows: repeat(7, $cell-size);
     grid-auto-flow: column;
-    row-gap: calc(#{$cell-size}/ 2);
-    column-gap: calc(#{$cell-size}/ 2);
+    row-gap: calc(#{$cell-size}/ 3);
+    column-gap: calc(#{$cell-size}/ 3);
 
     .cell {
       height: 100%;
       width: $cell-size;
       border-radius: calc(#{$cell-size}/ 4);
+
+      .cell-modal {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 50px;
+        right: 100px;
+        height: 30px;
+        width: 200px;
+        border-radius: 5px;
+        background-color: #111;
+
+        p {
+          font-size: 0.8rem;
+        }
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .visible {
+        display: flex;
+      }
     }
 
     .cell:hover {
@@ -67,8 +93,8 @@ $cell-size: 15px;
 
 .expanded {
   padding: 50px;
-  height: 200px;
-  width: 80%;
+  height: 150px;
+  width: 90%;
 }
 
 .close-btn {

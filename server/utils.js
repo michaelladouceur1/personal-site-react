@@ -48,6 +48,11 @@ async function getGithubData() {
                     starredRepositories(last: 10) {
                         nodes {
                             name
+                            description
+                            url
+                            primaryLanguage {
+                                name
+                            }
                         }
                     }
                     repositories(last: 10) {
