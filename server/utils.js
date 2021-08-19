@@ -17,6 +17,7 @@ function setHeaders() {
 async function getGithubData() {
   var timestamp = new Date("08/07/2021").toISOString();
   var today = new Date().toISOString();
+  console.log("getGithubData()");
 
   try {
     const {
