@@ -2,9 +2,10 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { FiMinimize } from "react-icons/fi";
 
-import GithubPreviewCell from "./GithubPreviewCell";
+import GithubPreviewGrid from "./GithubPreviewGrid";
+import GithubPreviewDetails from "./GithubPreviewDetails";
 
-import "./css/GithubPreview.scss";
+import "../css/GithubPreview.scss";
 
 export const DAYS_ON_PREVIEW = 70;
 
@@ -37,17 +38,8 @@ function GithubPreview(props) {
           >
             <FiMinimize />
           </a>
-          <div className="github-grid">
-            {displayedWeeks.length > 0 ? (
-              displayedWeeks.map((week) => {
-                return week.contributionDays.map((day, idx) => {
-                  return <GithubPreviewCell key={idx} day={day} />;
-                });
-              })
-            ) : (
-              <></>
-            )}
-          </div>
+          <GithubPreviewGrid displayedWeeks={displayedWeeks} />
+          <GithubPreviewDetails githubData={githubData} />
         </div>
       ) : (
         <button onClick={() => setPreviewExpanded(true)}>

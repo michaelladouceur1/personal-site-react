@@ -55,9 +55,8 @@ async function getGithubData() {
                             }
                         }
                     }
-                    repositories(last: 10) {
-                        edges {
-                            node {
+                    repositories(first: 10, orderBy: {direction: DESC, field: UPDATED_AT}) {
+                            nodes {
                                 name
                                 description
                                 url
@@ -85,7 +84,7 @@ async function getGithubData() {
                                     }
                                 }
                             }
-                        }
+                        
                     }
                     contributionsCollection {
                         contributionCalendar {

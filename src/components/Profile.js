@@ -2,7 +2,7 @@ import React from "react";
 
 // Local Imports - JS
 import Section from "./Section";
-import GithubPreview from "./GithubPreview";
+import GithubPreview from "./GithubPreview/GithubPreview";
 
 // Local Imports - CSS
 import "./css/Profile.scss";
