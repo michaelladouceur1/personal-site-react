@@ -45,13 +45,20 @@ async function getGithubData() {
                             name
                         }
                     }
-                    starredRepositories(last: 10) {
+                    starredRepositories(first: 10, orderBy: {direction: DESC, field: STARRED_AT}) {
                         nodes {
                             name
                             description
                             url
+                            stargazerCount
                             primaryLanguage {
                                 name
+                            }
+                            labels {
+                                nodes {
+                                    name
+                                    description
+                                }
                             }
                         }
                     }

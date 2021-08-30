@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 const today = new Date();
 
 function GithubPreviewRepos(props) {
   const { githubData } = props;
+
+  const [suppVisible, setSuppVisible] = useState("hidden");
 
   function createdUpdatedDate(date, type) {
     const updatedCreate = new Date(date);
@@ -21,27 +23,41 @@ function GithubPreviewRepos(props) {
     <div className="github-preview-details-repos">
       {githubData.repositories.nodes.map((repo, idx) => {
         return (
-          <div key={idx} className="repos-row">
-            <div className="repos-row-td">
-              <h3>
-                <a href={repo.url} target="_blank">
-                  {repo.name}
-                </a>
-              </h3>
-              {repo.description ? <p>{repo.description}</p> : <></>}
+          <div className="repo">
+            <div key={idx} className="repo-main">
+              <div className="repo-col-1">
+                <h3>
+                  <a href={repo.url} target="_blank">
+                    {repo.name}
+                  </a>
+                </h3>
+                {repo.description ? <p>{repo.description}</p> : <></>}
+              </div>
+              <div className="repo-col-2">
+                {repo.languages.nodes.length > 0 ? (
+                  repo.languages.nodes.map((lang) => {
+                    return <p>{lang.name}</p>;
+                  })
+                ) : (
+                  <></>
+                )}
+              </div>
+              <div className="repo-col-3">
+                <p>{createdUpdatedDate(repo.createdAt, "Created")}</p>
+                <p>{createdUpdatedDate(repo.updatedAt, "Updated")}</p>
+              </div>
             </div>
-            <div className="repos-row-cul">
-              <p>{createdUpdatedDate(repo.createdAt, "Created")}</p>
-              <p>{createdUpdatedDate(repo.updatedAt, "Updated")}</p>
-              {repo.languages.nodes.length > 0 ? (
-                repo.languages.nodes.map((lang) => {
-                  return <p>{lang.name}</p>;
-                })
-              ) : (
-                <></>
-              )}
-            </div>
-            <div className="repos-row-down">Open</div>
+            {/* {suppVisible === "visible" ? (
+              <div className={`repo-supp ${suppVisible}`}>
+                <h5>HIDDEN</h5>
+                <h5>HIDDEN</h5>
+                <h5>HIDDEN</h5>
+                <h5>HIDDEN</h5>
+              </div>
+            ) : (
+              <></>
+            )}
+            <button onClick={() => setSuppVisible("visible")}>Open</button> */}
           </div>
         );
       })}

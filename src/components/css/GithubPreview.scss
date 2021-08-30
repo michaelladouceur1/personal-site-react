@@ -105,10 +105,20 @@ $cell-size: 15px;
       overflow-y: scroll;
       margin-top: 10px;
 
-      .github-preview-details-repos {
-        width: 100%;
+      .repo {
+        display: flex;
+        flex-direction: column;
 
-        .repos-row {
+        span {
+          display: flex;
+          align-items: center;
+
+          svg {
+            font-size: 1rem;
+          }
+        }
+
+        .repo-main {
           display: flex;
           justify-content: space-between;
           min-height: 75px;
@@ -118,7 +128,7 @@ $cell-size: 15px;
           margin-bottom: 15px;
           transition: 0.3s;
 
-          .repos-row-td {
+          .repo-col-1 {
             width: 250px;
           }
 
@@ -130,6 +140,27 @@ $cell-size: 15px;
             font-size: 0.75rem;
           }
         }
+
+        .repo-supp {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .hidden {
+          height: 0;
+        }
+
+        .visible {
+          height: 100%;
+        }
+      }
+
+      .github-preview-details-repos {
+        width: 100%;
+      }
+
+      .github-preview-details-interests {
+        width: 100%;
       }
     }
   }
