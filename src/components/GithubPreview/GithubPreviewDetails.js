@@ -8,14 +8,10 @@ import GithubPreviewInterests from "./GithubPreviewInterests";
 function GithubPreviewDetails(props) {
   const { githubData } = props;
 
-  const [displayedGithubSection, setDisplayedGithubSection] = useState(
-    "github-preview-overview"
-  );
-
   const sectionComponents = {
-    "github-preview-overview": (
-      <GithubPreviewOverview githubData={githubData} />
-    ),
+    // "github-preview-overview": (
+    //   <GithubPreviewOverview githubData={githubData} />
+    // ),
     "github-preview-repositories": (
       <GithubPreviewRepos githubData={githubData} />
     ),
@@ -23,6 +19,10 @@ function GithubPreviewDetails(props) {
       <GithubPreviewInterests githubData={githubData} />
     ),
   };
+
+  const [displayedGithubSection, setDisplayedGithubSection] = useState(
+    Object.keys(sectionComponents)[0]
+  );
 
   return (
     <div className="github-preview-details">
