@@ -16,7 +16,9 @@ function GithubPreviewDetails(props) {
     "github-preview-overview": (
       <GithubPreviewOverview githubData={githubData} />
     ),
-    "github-preview-repos": <GithubPreviewRepos githubData={githubData} />,
+    "github-preview-repositories": (
+      <GithubPreviewRepos githubData={githubData} />
+    ),
     "github-preview-interests": (
       <GithubPreviewInterests githubData={githubData} />
     ),
@@ -25,30 +27,21 @@ function GithubPreviewDetails(props) {
   return (
     <div className="github-preview-details">
       <div className="github-preview-details-menu">
-        <button
-          id="github-preview-overview"
-          onClick={(event) => {
-            setDisplayedGithubSection(event.target.id);
-          }}
-        >
-          Overview
-        </button>
-        <button
-          id="github-preview-repos"
-          onClick={(event) => {
-            setDisplayedGithubSection(event.target.id);
-          }}
-        >
-          Repositories
-        </button>
-        <button
-          id="github-preview-interests"
-          onClick={(event) => {
-            setDisplayedGithubSection(event.target.id);
-          }}
-        >
-          Interests
-        </button>
+        {Object.keys(sectionComponents).map((key) => {
+          const keyArr = key.split("-");
+          const keyDisplay = keyArr.slice(keyArr.length - 1)[0].toUpperCase();
+          return (
+            <button
+              id={key}
+              className={displayedGithubSection === key ? "active" : ""}
+              onClick={(event) => {
+                setDisplayedGithubSection(event.target.id);
+              }}
+            >
+              {keyDisplay}
+            </button>
+          );
+        })}
       </div>
       <div className="github-preview-details-content">
         {sectionComponents[displayedGithubSection]}

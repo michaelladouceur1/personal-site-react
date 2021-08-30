@@ -97,6 +97,9 @@ async function getGithubData() {
                         contributionCalendar {
                             colors
                             totalContributions
+                            months {
+                                name
+                            }
                             weeks {
                                 contributionDays {
                                     date

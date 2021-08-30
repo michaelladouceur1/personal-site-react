@@ -7,7 +7,7 @@ import GithubPreviewDetails from "./GithubPreviewDetails";
 
 import "../css/GithubPreview.scss";
 
-export const DAYS_ON_PREVIEW = 70;
+export const WEEKS_ON_PREVIEW = 12;
 
 function GithubPreview(props) {
   const { githubData } = props;
@@ -20,7 +20,9 @@ function GithubPreview(props) {
     if (Object.keys(githubData).length > 0) {
       const weeks =
         githubData.contributionsCollection.contributionCalendar.weeks;
-      setDisplayedWeeks(weeks.slice(weeks.length - 12, weeks.length));
+      setDisplayedWeeks(
+        weeks.slice(weeks.length - WEEKS_ON_PREVIEW, weeks.length)
+      );
     }
   }, [githubData]);
 
