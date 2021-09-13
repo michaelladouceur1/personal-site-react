@@ -45,19 +45,25 @@ async function getGithubData() {
                             name
                         }
                     }
-                    starredRepositories(last: 10) {
+                    starredRepositories(first: 10, orderBy: {direction: DESC, field: STARRED_AT}) {
                         nodes {
                             name
                             description
                             url
+                            stargazerCount
                             primaryLanguage {
                                 name
                             }
+                            labels {
+                                nodes {
+                                    name
+                                    description
+                                }
+                            }
                         }
                     }
-                    repositories(last: 10) {
-                        edges {
-                            node {
+                    repositories(first: 10, orderBy: {direction: DESC, field: UPDATED_AT}) {
+                            nodes {
                                 name
                                 description
                                 url
@@ -85,12 +91,15 @@ async function getGithubData() {
                                     }
                                 }
                             }
-                        }
+                        
                     }
                     contributionsCollection {
                         contributionCalendar {
                             colors
                             totalContributions
+                            months {
+                                name
+                            }
                             weeks {
                                 contributionDays {
                                     date
