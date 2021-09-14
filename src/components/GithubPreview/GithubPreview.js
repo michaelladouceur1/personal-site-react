@@ -11,7 +11,6 @@ export const WEEKS_ON_PREVIEW = 12;
 
 function GithubPreview(props) {
   const { githubData } = props;
-  console.log(githubData);
 
   const [displayedWeeks, setDisplayedWeeks] = useState([]);
   const [previewExpanded, setPreviewExpanded] = useState(false);

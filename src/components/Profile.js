@@ -10,6 +10,13 @@ import "./css/Profile.scss";
 function Profile(props) {
   const { githubData } = props;
 
+  function getAge() {
+    const birthday = new Date("06/09/1992");
+    const today = new Date();
+    const diff = new Date(today - birthday);
+    return Math.abs(diff.getUTCFullYear() - 1970);
+  }
+
   return (
     <Section name="profile">
       <div className="section-header">
@@ -37,7 +44,7 @@ function Profile(props) {
             </div>
             <div>
               <h3>Age:</h3>
-              <h4>28</h4>
+              <h4>{getAge()}</h4>
             </div>
             <div>
               <h3>Location:</h3>

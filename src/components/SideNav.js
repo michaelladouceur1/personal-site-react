@@ -66,7 +66,7 @@ function SideNav(props) {
           <AiFillGithub />
         </a>
         <a
-          href="mailto: michaelladouceur1@gmail.com"
+          href="mailto: michaelladouceurdev@gmail.com"
           target="_blank"
           onMouseEnter={() => {
             setDisplayShown(false);
