@@ -1,9 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Input from "@material-ui/core/Input";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-import Chip from "@material-ui/core/Chip";
 
 import Section from "./Section";
 import PortfolioCard from "./PortfolioCard";
@@ -11,43 +7,36 @@ import PortfolioCard from "./PortfolioCard";
 import "./css/Portfolio.scss";
 
 function Portfolio(props) {
-  const { portfolio, setModalVisible, setFeatureApp } = props;
+	const { portfolio, setModalVisible, setFeatureApp } = props;
 
-  const [filteredPortfolio, setFilteredPortfolio] = useState(portfolio);
+	const [filteredPortfolio, setFilteredPortfolio] = useState(portfolio);
 
-  filteredPortfolio.sort((a, b) => {
-    if (a.pinned > b.pinned) return -1;
-    if (b.pinned > a.pinned) return 1;
+	filteredPortfolio.sort((a, b) => {
+		if (a.pinned > b.pinned) return -1;
+		if (b.pinned > a.pinned) return 1;
 
-    return 0;
-  });
+		return 0;
+	});
 
-  return (
-    <Section name="portfolio">
-      <div className="section-header">
-        <h1>Portfolio</h1>
-      </div>
-      <div className="section-body">
-        <div className="portfolio">
-          {filteredPortfolio.map((project, idx) => {
-            return (
-              <PortfolioCard
-                key={idx}
-                project={project}
-                setModalVisible={setModalVisible}
-                setFeatureApp={setFeatureApp}
-              />
-            );
-          })}
-        </div>
-      </div>
-      {/* <iframe
+	return (
+		<Section name="portfolio">
+			<div className="section-header">
+				<h1>Portfolio</h1>
+			</div>
+			<div className="section-body">
+				<div className="portfolio">
+					{filteredPortfolio.map((project, idx) => {
+						return <PortfolioCard key={idx} project={project} setModalVisible={setModalVisible} setFeatureApp={setFeatureApp} />;
+					})}
+				</div>
+			</div>
+			{/* <iframe
         width="1000px"
         height="1000px"
         src="https://ticketmain.herokuapp.com/"
       ></iframe> */}
-    </Section>
-  );
+		</Section>
+	);
 }
 
 export default Portfolio;
