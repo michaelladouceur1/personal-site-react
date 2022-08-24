@@ -31,7 +31,10 @@ function Profile(props) {
 							anything science & design related. Also enjoy taking pictures with sqirrels.
 						</p>
 					</div>
-					<img src="./assets/portrait-2.JPG" alt="" />
+					<img
+						src="https://lh3.googleusercontent.com/pw/AL9nZEUqVjZju_ITphdCgsszKw6n58OP40V3ZVQwYoE8yK6exca-2AE1XW4XMtqcpUlJXJdR7ho91L8AhCcK61YXAjRW1wiwXMecS131eu6i2yAyye5z7xOKbmxc6HJ1N-db8XYfakVogqqWp-0XPkWR3ZY=s1088-no?authuser=0"
+						alt=""
+					/>
 					<div className="profile-content">
 						<div>
 							<h3>Name:</h3>

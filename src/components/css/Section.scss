@@ -1,83 +1,84 @@
-@use '../../style.scss' as base;
+@use "../../style.scss" as base;
 
 $section-font-size: 18px;
 $header-body-padding: 30px;
 
 .section {
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  //   height: 100vh;
-  margin-bottom: 50px;
-  background-color: transparent;
-  font-size: $section-font-size;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	min-height: 100vh;
+	margin-bottom: 50px;
+	background-color: transparent;
+	font-size: $section-font-size;
 }
 
 .section:nth-child(odd) {
-  background-color: base.$background-color-2;
+	background-color: base.$background-color-2;
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 1000px;
-  height: 100%;
-  padding: 50px 0;
-  background-color: transparent;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 1000px;
+	height: 100%;
+	padding: 50px 0;
+	background-color: transparent;
 }
 
 .section-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding-bottom: $header-body-padding;
-  border-bottom: 2px solid base.$highlight-color-2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	padding-bottom: $header-body-padding;
+	border-bottom: 2px solid base.$highlight-color-2;
 
-  h1 {
-    font-size: 2.5em;
-    font-weight: 200;
-    color: base.$highlight-color-1;
-  }
+	h1 {
+		font-size: 2.5em;
+		font-weight: 200;
+		color: base.$highlight-color-1;
+	}
 }
 
 .section-body {
-  display: flex;
-  justify-content: space-between;
-  height: 100%;
-  padding: $header-body-padding 0;
+	display: flex;
+	justify-content: space-between;
+	height: 100%;
+	padding: $header-body-padding 0;
 }
 
 .list-item {
-  display: flex;
-  width: 100%;
-  margin-top: 50px;
+	display: flex;
+	width: 100%;
+	margin-top: 50px;
 }
 
 .list-item h2 {
-  font-size: 1.1em;
-  font-weight: 400;
-  color: base.$highlight-color-1;
+	font-size: 1.1em;
+	font-weight: 400;
+	color: base.$highlight-color-1;
 }
 
 .list-item-header {
-  width: 30%;
-  margin-right: 10px;
+	width: 30%;
+	margin-right: 10px;
 
-  .location {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    color: base.$highlight-color-1;
+	.location {
+		display: flex;
+		align-items: center;
+		margin-top: 10px;
+		color: base.$highlight-color-1;
 
-    svg {
-      fill: base.$highlight-color-1;
-    }
-  }
+		svg {
+			fill: base.$highlight-color-1;
+		}
+	}
 }
 
 .list-item-content {
-  width: 70%;
-  font-weight: 300;
+	width: 70%;
+	font-weight: 300;
 }

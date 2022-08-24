@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import Section from "./Section";
 import PortfolioCard from "./PortfolioCard";
@@ -30,11 +29,6 @@ function Portfolio(props) {
 					})}
 				</div>
 			</div>
-			{/* <iframe
-        width="1000px"
-        height="1000px"
-        src="https://ticketmain.herokuapp.com/"
-      ></iframe> */}
 		</Section>
 	);
 }
