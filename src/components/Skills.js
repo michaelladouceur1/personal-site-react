@@ -4,9 +4,7 @@ import Section from "./Section";
 
 import "./css/Skills.scss";
 
-function Skills(props) {
-  const { skills } = props;
-
+function Skills({ skills }) {
   return (
     <Section name="skills">
       <div className="section-header">

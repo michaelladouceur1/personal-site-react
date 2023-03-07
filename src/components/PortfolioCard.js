@@ -6,14 +6,40 @@ import {
   AiFillStar,
   AiFillYoutube,
 } from "react-icons/ai";
+import { DiNpm } from "react-icons/di";
 import { FaExternalLinkSquareAlt } from "react-icons/fa";
 
 import "./css/PortfolioCard.scss";
 
-function PortfolioCard(props) {
-  const { project, setModalVisible, setFeatureApp } = props;
-
+function PortfolioCard({ project, setModalVisible, setFeatureApp }) {
   const [menuVisible, setMenuVisible] = useState(false);
+
+  const urlComponents = [
+    {
+      icon: <AiFillYoutube />,
+      url: project.youtube_url,
+    },
+    {
+      icon: <AiFillGithub />,
+      url: project.github_url,
+    },
+    {
+      icon: <DiNpm />,
+      url: project.npm_url,
+    },
+    {
+      icon: <AiOutlineExpand />,
+      url: project.deployed_url,
+      onClick: () => {
+        setFeatureApp(project);
+        setModalVisible(true);
+      },
+    },
+    {
+      icon: <FaExternalLinkSquareAlt />,
+      url: project.deployed_url,
+    },
+  ];
 
   return (
     <div
@@ -46,7 +72,21 @@ function PortfolioCard(props) {
           </div>
         </div>
         <div className="portfolio-item-info-menu">
-          {project.youtube_url && project.youtube_url.length > 0 ? (
+          {urlComponents.map((urlComponent, idx) => {
+            if (urlComponent.url && urlComponent.url.length > 0) {
+              return (
+                <UrlComponent
+                  key={idx}
+                  icon={urlComponent.icon}
+                  targetUrl={urlComponent.url}
+                  onClick={urlComponent.onClick}
+                />
+              );
+            } else {
+              return <></>;
+            }
+          })}
+          {/* {project.youtube_url && project.youtube_url.length > 0 ? (
             <>
               <a
                 href={project.youtube_url}
@@ -92,10 +132,18 @@ function PortfolioCard(props) {
             </>
           ) : (
             <></>
-          )}
+          )} */}
         </div>
       </div>
     </div>
+  );
+}
+
+function UrlComponent({ icon, targetUrl, onClick }) {
+  return (
+    <a href={targetUrl} target="_blank" rel="noopener noreferrer">
+      {icon}
+    </a>
   );
 }
 
