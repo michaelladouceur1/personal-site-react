@@ -31,7 +31,7 @@ function Profile(props) {
 							anything science & design related. Also enjoy taking pictures with sqirrels.
 						</p>
 					</div>
-					<img src="./assets/portrait-2.JPG" alt="" />
+					<img src="../assets/portrait-2.jpg" alt="" />
 					<div className="profile-content">
 						<div>
 							<h3>Name:</h3>
