@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .profile {
 	display: flex;
 	justify-content: space-between;
@@ -16,3 +17,23 @@
 	justify-content: space-around;
 	width: 25%;
 }
+=======
+.profile {
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 25%;
+}
+>>>>>>> 5a687efc165d32839907224460bee5ee1b3b8971

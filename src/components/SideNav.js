@@ -1,9 +1,9 @@
-import { useState, useEffect, useContext } from "react";
+import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
+import { WiDaySunny } from "react-icons/wi";
 
-import { useFadeIn, useScrollProgress } from "../hooks";
 import "./css/SideNav.scss";
 
 function SideNav(props) {
@@ -12,14 +12,19 @@ function SideNav(props) {
 	const [holdCD, setHoldCD] = useState("");
 	const [displayShown, setDisplayShown] = useState(true);
 
-	const [navFadeInStyle] = useFadeIn(1000, 1000);
-
 	window.onscroll = () => {
-		setProgress(useScrollProgress());
+		setProgress(scrollProgress());
 	};
 
+	function scrollProgress() {
+		let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+		let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+		let scrolled = Math.floor((winScroll / height) * 100);
+		return scrolled;
+	}
+
 	return (
-		<div className="sidenav" style={navFadeInStyle}>
+		<div className="sidenav">
 			<div className="sn-controls">
 				<a href="#profile">Profile</a>
 				<a href="#portfolio">Portfolio</a>
